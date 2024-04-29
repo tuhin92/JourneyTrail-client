@@ -17,6 +17,19 @@ const AddTouristsSpot = () => {
 
         const newSpot = {tourists_spot_name, image, country_Name, location, short_description, average_cost, seasonality, travel_time, totaVisitorsPerYear, userEmail, userName}
         console.log(newSpot);
+
+        // send data to the server 
+        fetch('http://localhost:3005/addSpot', {
+            method:'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newSpot)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
     return (
         <div className="mb-8 p-24">
