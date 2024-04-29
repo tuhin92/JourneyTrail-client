@@ -1,8 +1,27 @@
 const AddTouristsSpot = () => {
+    const handleAddTouristSpot = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const tourists_spot_name = form.tourists_spot_name.value;
+        const image = form.image.value;
+        const country_Name = form.country_Name.value;
+        const location = form.location.value;
+        const short_description = form.short_description.value;
+        const average_cost = form.average_cost.value;
+        const seasonality = form.seasonality.value;
+        const travel_time = form.travel_time.value;
+        const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
+        const userEmail = form.userEmail.value;
+        const userName = form.userName.value;
+
+        const newSpot = {tourists_spot_name, image, country_Name, location, short_description, average_cost, seasonality, travel_time, totaVisitorsPerYear, userEmail, userName}
+        console.log(newSpot);
+    }
     return (
         <div className="mb-8 p-24">
             <h2 className="text-3xl font-bold text-center text-purple-600">Add Tourists Spot</h2>
-            <form>
+            <form onSubmit={handleAddTouristSpot}>
                 {/* form row  */}
                 <div className="md:flex mt-8 gap-8">
                     <div className="form-control md:w-1/2">
@@ -72,7 +91,7 @@ const AddTouristsSpot = () => {
                     </div>
                     <div className="form-control md:w-1/2">
                     <label className="label">
-                        <span className="label-text">Travel_Time</span>
+                        <span className="label-text">Travel Time</span>
                     </label>
                     <label>
                         <input type="text" name="travel_time" placeholder="Travel Time"  className="input input-bordered w-full"/>
