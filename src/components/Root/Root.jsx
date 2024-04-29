@@ -7,6 +7,7 @@ const Root = () => {
         <div className="container mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
+            {/* <p>jshjfhsd</p> */}
             <Footer></Footer>
         </div>
     );
