@@ -9,7 +9,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div>
+        <div className="mt-6">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,7 +20,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl text-purple-600 text-2xl">Journey <span className="text-orange-500">Trail</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
