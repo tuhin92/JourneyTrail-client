@@ -1,0 +1,29 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.error-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    margin-bottom: 30px;
+}
+
+.error-image {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .error-heading {
+        font-size: 32px;
+    }
+}

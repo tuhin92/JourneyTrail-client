@@ -11,13 +11,14 @@ import Home from './components/Home/Home';
 import AllTouristsSpot from './components/AllTouristsSpot/AllTouristsSpot';
 import AddTouristsSpot from './components/AddTouristsSpot/AddTouristsSpot';
 import MyList from './components/MyList/MyList';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    // errorElement :
+    errorElement : <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
