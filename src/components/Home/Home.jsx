@@ -2,6 +2,7 @@ import Slider from "../Slider/Slider";
 import { useLoaderData } from 'react-router-dom';
 import SpotCard from "../SpotCard";
 
+
 const Home = () => {
     const spots = useLoaderData();
     return (

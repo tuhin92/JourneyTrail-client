@@ -15,6 +15,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import CardDetails from './components/CardDetails';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
+import AuthProvider from './Providers/AuthProvider';
 
 
 
@@ -61,6 +62,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
