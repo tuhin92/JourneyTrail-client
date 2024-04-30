@@ -16,6 +16,7 @@ import CardDetails from './components/CardDetails';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import AuthProvider from './Providers/AuthProvider';
+import PrivateRoute from './PrivateRoute';
 
 
 
@@ -37,15 +38,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/addSpot',
-        element: <AddTouristsSpot></AddTouristsSpot>
+        element: <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>
       },
       {
         path: '/myList',
-        element: <MyList></MyList>
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>
       },
       {
         path: '/spot/:_id',
-        element: <CardDetails></CardDetails>,
+        element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
         loader: () => fetch('http://localhost:3006/addSpot'),
       },
       {
