@@ -40,8 +40,9 @@ const router = createBrowserRouter([
         element: <MyList></MyList>
       },
       {
-        path: '/spot/:id',
-        element: <CardDetails></CardDetails>
+        path: '/spot/:_id',
+        element: <CardDetails></CardDetails>,
+        loader: () => fetch('http://localhost:3005/addSpot'),
       }
     ]
   },

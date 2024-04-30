@@ -20,7 +20,7 @@ const SpotCard = ({spot}) => {
                         <p className="font-bold text-purple-600">Travel Time: {travel_time}</p>
                     </div>
                     <div className="card-actions">
-                        <Link to={`/spot/${_id}`} className="btn">View Details</Link>
+                        <Link to={`/spot/${_id}`} className="btn bg-purple-500 text-white">View Details</Link>
                     </div>
                 </div>
             </div>
