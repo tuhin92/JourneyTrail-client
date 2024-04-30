@@ -13,6 +13,8 @@ import AddTouristsSpot from './components/AddTouristsSpot/AddTouristsSpot';
 import MyList from './components/MyList/MyList';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import CardDetails from './components/CardDetails';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 
 
 
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
         path: '/spot/:_id',
         element: <CardDetails></CardDetails>,
         loader: () => fetch('http://localhost:3005/addSpot'),
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: '/signin',
+        element: <SignIn></SignIn>
       }
     ]
   },

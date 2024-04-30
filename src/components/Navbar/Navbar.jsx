@@ -6,6 +6,7 @@ const Navbar = () => {
         <li><NavLink to="/allSpot">All Tourists Spot</NavLink></li>
         <li><NavLink to="/addSpot">Add Tourists Spot</NavLink></li>
         <li><NavLink to="/myList">My List</NavLink></li>
+        {/* <li><NavLink to="/signup">Sign Up</NavLink></li> */}
     </>
 
     return (
@@ -33,7 +34,7 @@ const Navbar = () => {
                     <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </label>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <NavLink to="/signin" className="btn">Sign In</NavLink>
                 </div>
             </div>
         </div>
