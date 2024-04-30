@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
+
 const SpotCard = ({spot}) => {
-    const {tourists_spot_name, image, country_Name, location, short_description, average_cost, seasonality, travel_time, totaVisitorsPerYear, userEmail, userName} = spot;
+    const {tourists_spot_name, image, country_Name, location, short_description, average_cost, seasonality, travel_time, totaVisitorsPerYear, userEmail, userName, _id} = spot;
+
+
+
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -15,7 +20,7 @@ const SpotCard = ({spot}) => {
                         <p className="font-bold text-purple-600">Travel Time: {travel_time}</p>
                     </div>
                     <div className="card-actions">
-                        <button className="btn btn-primary">View Details</button>
+                        <Link to={`/spot/${_id}`} className="btn">View Details</Link>
                     </div>
                 </div>
             </div>

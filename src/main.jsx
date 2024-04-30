@@ -12,6 +12,8 @@ import AllTouristsSpot from './components/AllTouristsSpot/AllTouristsSpot';
 import AddTouristsSpot from './components/AddTouristsSpot/AddTouristsSpot';
 import MyList from './components/MyList/MyList';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import CardDetails from './components/CardDetails';
+
 
 
 const router = createBrowserRouter([
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/myList',
         element: <MyList></MyList>
+      },
+      {
+        path: '/spot/:id',
+        element: <CardDetails></CardDetails>
       }
     ]
   },
