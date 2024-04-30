@@ -27,12 +27,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:3005/addSpot'),
+        loader: () => fetch('http://localhost:3006/addSpot'),
       },
       {
         path: '/allSpot',
         element: <AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch('http://localhost:3005/addSpot')
+        loader: () => fetch('http://localhost:3006/addSpot')
       },
       {
         path: '/addSpot',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: '/spot/:_id',
         element: <CardDetails></CardDetails>,
-        loader: () => fetch('http://localhost:3005/addSpot'),
+        loader: () => fetch('http://localhost:3006/addSpot'),
       },
       {
         path: '/signup',

@@ -8,6 +8,7 @@ const SignUp = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, photo, email, password);
+        
     }
   return (
     <div className="mb-24">
