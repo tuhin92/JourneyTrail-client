@@ -5,7 +5,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const SignIn = () => {
 
-    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
 
 
@@ -36,6 +36,18 @@ const SignIn = () => {
             console.error(error);
         })
     }
+
+    // github sign in 
+    const handleGithubSignIn = () => {
+        console.log('Attempting Github sign-in...');
+        signInWithGithub()
+            .then(result => {
+                console.log('GitHub sign-in successful:', result.user);
+            })
+            .catch(error => {
+                console.error('Error signing in with GitHub:', error);
+            });
+    };
 
 
 
@@ -76,7 +88,7 @@ const SignIn = () => {
                 <p className="text-center mt-6 mb-4 text-base">Don't have an account? <Link to="/signup"> <span className='text-blue-600 font-bold'>Sign Up</span></Link> </p>
                 <div>
                     <button onClick={handleGoogleSignIn} className="btn  bg-green-600"><FaGoogle className='text-2xl'></FaGoogle>Sign in with Google</button>
-                    <button className="btn bg-orange-600"><FaGithub className='text-2xl'></FaGithub> Sign in with Github</button>
+                    <button onClick={handleGithubSignIn} className="btn bg-orange-600"><FaGithub className='text-2xl'></FaGithub> Sign in with Github</button>
                 </div>
             </form>
 

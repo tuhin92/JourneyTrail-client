@@ -4,13 +4,15 @@ import {
     signInWithEmailAndPassword, 
     signInWithPopup, 
     signOut, 
-    onAuthStateChanged 
+    onAuthStateChanged,
+    GoogleAuthProvider, // Import GoogleAuthProvider directly
+    GithubAuthProvider // Import GithubAuthProvider directly
 } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
-import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -58,6 +60,11 @@ const AuthProvider = ({ children }) => {
         }
     };
 
+    const signInWithGithub = () => { // Removed the 'async' keyword, as signInWithPopup already returns a Promise
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider);
+    }
+
     const logOut = async () => {
         setLoading(true);
         try {
@@ -81,7 +88,7 @@ const AuthProvider = ({ children }) => {
         };
     }, []);
 
-    const authInfo = { user, createUser, signInUser, logOut, signInWithGoogle, loading };
+    const authInfo = { user, createUser, signInUser, logOut, signInWithGoogle, loading, signInWithGithub };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
